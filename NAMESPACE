@@ -1,0 +1,40 @@
+useDynLib(FFD)
+
+import(methods)
+import(R2HTML)
+import(tcltk)
+importFrom(graphics,plot)
+
+exportClasses(
+              SurveyData,
+              IndSampling,
+              IndSamplingSummary,
+              LtdSampling,
+              LtdSamplingSummary
+              )
+              
+export(
+       computeAlpha,
+       computeAlphaLimitedSampling,
+       computeAposterioriError,
+       computeAposterioriErrorRiskGroups,
+       computeOptimalSampleSize,
+       computeOptimalSampleSizeRiskGroups,
+       computePValue,
+       computePValueRiskGroups,
+       indSampling,
+       indSamplingSummary,
+       ltdSampling,
+       ltdSamplingSummary,
+       surveyData,
+       lls,
+       FFD_GUI       
+       )
+
+exportMethods(
+              HTML,
+              plot,
+              sample,
+              show,
+              summary
+              )
