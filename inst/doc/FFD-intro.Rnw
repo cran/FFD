@@ -43,10 +43,12 @@ In the package \texttt{FFD}, tools for calculating optimal sample sizes (on anim
 
 \Keywords{\proglang{R}, freedom from disease, sample size calculation, individual sampling, limited sampling, a-posteriori alpha error, graphical user interface, GUI} \Plainkeywords{R, freedom from disease, sample size calculation, individual sampling, limited sampling, a-posteriori alpha error, graphical user interface, GUI}
 
-%%\usepackage{Sweave} %% already provided by jss.cls %%\VignetteIndexEntry{FFD: Package to substantiate freedom from disease in R}
+%%\VignetteIndexEntry{FFD: Package to substantiate freedom from disease in R}
 %%\VignetteDepends{FFD}
 %%\VignetteKeywords{R}
 %%\VignettePackage{FFD}
+
+%%\usepackage{Sweave} %% already provided by jss.cls 
 
 \begin{document}
 
@@ -330,7 +332,7 @@ The most convenient way to use the package \texttt{FFD} is via the \index{GUI} \
 
 \begin{figure}[h!t]
 \begin{center}
-\includegraphics[width=120mm]{GUI_Reset.png}
+\includegraphics[width=120mm]{GUI_fresh.png}
 \end{center}
 \caption{Main window of the FFD-GUI}
 \label{fig:GUI_reset}
@@ -512,7 +514,7 @@ For the computation of the optimal sample size, the user must specify \textbf{ex
 \end{itemize}
 %
 
-If all the parameters are correctly specified, sample size calculation, sampling and survey diagnostics can be performed same as for non-targeted sampling. E.g., a click on the button \emph{Calculate} in the box \emph{Compute sample size} on tab \emph{Calculations} will promt the user to choose between risk-based and non-targeted sampling. If risk-based sampling is selected, the total sample size is returned, as well as the sample size for each risk group; see Figure~\ref{fig:GUI_calc_ind_risk}.
+If all the parameters are correctly specified, sample size calculation, sampling and survey diagnostics can be performed same as for non-targeted sampling. E.g., a click on the button \emph{Calculate} in the box \emph{Compute sample size} on tab \emph{Calculations} will prompt the user to choose between risk-based and non-targeted sampling. If risk-based sampling is selected, the total sample size is returned, as well as the sample size for each risk group; see Figure~\ref{fig:GUI_calc_ind_risk}.
 
 \begin{figure}[h!t]
 \begin{center}
