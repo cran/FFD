@@ -19,7 +19,7 @@ chooseColumnName <- function(inputDataVar, columnVar, dispText){
 	if (nchar(fileName) > 0){	
 		dataFileHead <- try(suppressWarnings(read.csv2(file = fileName, 
 			header = TRUE, nrows = 1)), silent = TRUE)
-		if (class(dataFileHead) == "data.frame"){
+		if (inherits(dataFileHead, "data.frame")){
 			dataFileHead <- read.csv2(file = fileName, header = TRUE, nrows = 1)
 			colNamesVec <- names(dataFileHead)
 			
@@ -314,7 +314,7 @@ buildMySurvey <- function(infoList){
 		diagSensitivity = diagSensitivity, costHerd = costHerdVal, 
 		costAnimal = costAnimalVal), silent = TRUE)
 
-    if (class(mySurvey) == "try-error") {
+    if (inherits(mySurvey, "try-error")){
 	    tkmessageBox(message = as.character(mySurvey), icon = "error", type = "ok")
 	    return(NULL)
 	} else {
@@ -467,7 +467,7 @@ OnCalcSS <- function(infoList, sampSizeVar, main){
 			}
 		}		
 		
-	    if (class(mySampling) == "try-error"){
+		if (inherits(mySampling, "try-error")){
 			tkmessageBox(message = as.character(mySampling), 
 			        icon = "error", type = "ok")
 			return(NULL)
@@ -744,7 +744,7 @@ sampleFarms <- function(tt, main, infoList, sampSizeVar, boxValue,
 				}
 				
 				# 4) Did that work?
-				if (class(mySampling) == "try-error"){
+				if (inherits(mySampling, "try-error")){
 					tkmessageBox(message = as.character(mySampling), 
 						icon = "error", type = "ok")
 					return(NULL)
@@ -755,7 +755,7 @@ sampleFarms <- function(tt, main, infoList, sampSizeVar, boxValue,
 				sampleList <- sample(x = mySampling, size = sampSizeScheme)
 				saveCheck <- suppressWarnings(try(write.csv2(sampleList$sample, 
 					file = fileName, row.names = FALSE), silent = TRUE))
-                if (class(saveCheck) == "NULL"){
+                if (is.null(saveCheck)){
 					## Saving worked:
 					tclvalue(compSampSizeVar) <- as.character(mySampling@nHerds)
 					tclvalue(actSampSizeVar) <- as.character(length(sampleList$indexSample))
@@ -916,7 +916,7 @@ OnCalcDiag <- function(infoList, diagVar, main){
 				return(NULL)
 			}			
 		}
-	if (class(mySamplingSummary) == "try-error"){
+	if (inherits(mySamplingSummary, "try-error")){
 		tkmessageBox(message = 
 			as.character(mySamplingSummary), 
 			icon = "error", type = "ok")
